@@ -4,8 +4,28 @@
 <body>
    
    <script>
+      var r = 255;
+      var g = 255;
+      var b = 255;
       function buttonPress(){
          document.body.style.backgroundColor="rgb(255,0,0)";
+      }
+      
+      function sliderChange(){
+         document.body.style.backgroundColor=("rgb("+r+","+g+","+b+"))
+      }
+      
+      function sliderChangeR(val){
+        r=val;
+        sliderChange();
+      }
+      function sliderChangeG(val){
+        g=val;
+        sliderChange();
+      }
+      function sliderChangeB(val){
+        b=val;
+        sliderChange();
       }
       </script>
 
@@ -14,6 +34,10 @@
    <p>
    <a style="color:yellow"href="index.html"> Go Back to the Home Page</a><br>
    <button onclick="buttonPress()">Don't press the button</button>
+   
+   <input type="range" id="slider" min="0" max="255" onchange="sliderChangeR(this.value)"/><br>
+   <input type="range" id="slider" min="0" max="255" onchange="sliderChangeG(this.value)"/><br>
+   <input type="range" id="slider" min="0" max="255" onchange="sliderChangeB(this.value)"/><br>
    
    </p>
    

@@ -37,6 +37,9 @@
      canvas.height = window.innerHeight;
      
      var ctx = canvas.getContext('2d');
+       
+       var goalX
+       var goalY
      
      var speed = 3;
      
@@ -58,8 +61,15 @@
        var character=new Path2D();
        character.arc(x,y,25,0,2 *Math.PI);
        
+       var goal = new Path2D();
+       goal.arc(goalX,goalY,25,0,2*Math.PI);
+       
+       
+       ctx.fillStyle = "#000000"
        ctx.fill(character);
-       }
+       ctx.fillStyle = "#4287f5"
+       ctx.fill(goal);
+     }
        
        setInterval(draw, 10);
        
